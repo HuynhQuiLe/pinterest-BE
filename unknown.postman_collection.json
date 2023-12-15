@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "cdf38681-0e36-469d-a0c6-8d8baa96b7a0",
+		"name": "unknown",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14996985",
+		"_collection_link": "https://www.postman.com/lehuynhqui/workspace/le-huynh-qui/collection/14996985-cdf38681-0e36-469d-a0c6-8d8baa96b7a0?action=share&creator=14996985&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"pass_word\": \"1\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/auth/login",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"tien@gmail.com\",\n    \"full_name\": \"Nguyễn Thị Thuỷ Tiên\",\n    \"pass_word\": 1\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/auth/register",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - GET all photos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/get-all-photos",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"get-all-photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - ADD photo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInJvbGUiOiJBRE1JTiIsImtleSI6MTcwMTg2MTUyMjQ3Nn0sImlhdCI6MTcwMTg2MTUyMiwiZXhwIjoxNzAxODYyNDIyfQ.RfhZBnMHpHTJ22yV5FA0sTE9qikRIrQqd-t3oa9Vhoo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/Users/admin/Documents/CODE/FRONT-END/CYBERSOFT/CLASSROOM/Meipaly/src/img/grid-metro-6.jpg"
+						},
+						{
+							"key": "photo_name",
+							"value": "Cô gái năng động ",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Hình ảnh về cô gái trẻ trung năng động và không kém phần tăng động ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/add",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - SEARCH photos by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/search/bo",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"search",
+						"bo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - DETAILS photo and user by photo_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/detail/by-photo/3",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"detail",
+						"by-photo",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - GET comment by photo_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/comment/by-photo/1",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"comment",
+						"by-photo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - SAVE photo ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInJvbGUiOiJBRE1JTiIsImtleSI6MTcwMTg1OTA1NTEzNn0sImlhdCI6MTcwMTg1OTA1NSwiZXhwIjoxNzAxODU5OTU1fQ.HPK4hLUQzPXB9Srvl0DKildYjEKLAwX5mxH5kXcuoZk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/detail/save/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"detail",
+						"save",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - SAVE photo or not?",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInJvbGUiOiJBRE1JTiIsImtleSI6MTcwMTg1NzI5OTg5NH0sImlhdCI6MTcwMTg1NzI5OSwiZXhwIjoxNzAxODU4MTk5fQ.SiCuhnWh_kGrtf_w5jspU-U0Bw8mZhbSOpJTzZwvv24",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/detail/save/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"detail",
+						"save",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - ADD comment for photo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInJvbGUiOiJBRE1JTiIsImtleSI6MTcwMTg1NDE5NDM5MX0sImlhdCI6MTcwMTg1NDE5NCwiZXhwIjoxNzAxODU1MDk0fQ.0Mydw84AOJbNbEPJ45nhYN8x8Z93y0Jkj0j1qrW7TuQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"Nước uống này ngon mà cậu.\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/comment/add/4",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"comment",
+						"add",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET user's information",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInJvbGUiOiJBRE1JTiIsImtleSI6MTcwMTg1OTYzMjY3NX0sImlhdCI6MTcwMTg1OTYzMiwiZXhwIjoxNzAxODYwNTMyfQ.7LM32GCqXTGX35JOkSFa2N3b1vDUkIKp2NkurGXCsbE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/user/get-user",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - Saved photo list - by user_id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIsInJvbGUiOiJVU0VSIiwia2V5IjoxNzAyNTY4MDg0OTcwfSwiaWF0IjoxNzAyNTY4MDg0LCJleHAiOjE3MDI1NjgzODR9.NFS0lzBcBi_7jWjKCZAEEEqFpLUApY_fxrLwDisHEFE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/detail/saved/get-list-by-user",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"detail",
+						"saved",
+						"get-list-by-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST - Created photo list - by user_id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIsInJvbGUiOiJVU0VSIiwia2V5IjoxNzAyNTY4NDY0MjA3fSwiaWF0IjoxNzAyNTY4NDY0LCJleHAiOjE3MDI1Njg3NjR9.2ULgholU1XxWiWhCfocGIy5ipkKd-_t2paJLnnJRyPA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/detail/created/get-list-by-user",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"detail",
+						"created",
+						"get-list-by-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PINTEREST -DELETE photo by photo_id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIsInJvbGUiOiJVU0VSIiwia2V5IjoxNzAxODYxNjgwOTM4fSwiaWF0IjoxNzAxODYxNjgwLCJleHAiOjE3MDE4NjI1ODB9.I5C5KsJ-Fh3vIRkt5F8QBOjeG2q03WMBWf7vLUtKXd4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/pinterest/photo/delete/3",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"pinterest",
+						"photo",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE user's information",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInJvbGUiOiJBRE1JTiIsImtleSI6MTcwMjYwNzM0MTAyN30sImlhdCI6MTcwMjYwNzM0MSwiZXhwIjoxNzAyNjA3NjQxfQ.YqQ1OSYZf6FEeez9qP0llBP4SLXjgAWFQafSng8Oxo8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "admin update",
+							"type": "text"
+						},
+						{
+							"key": "birthday",
+							"value": "2023-12-16",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "0837049734",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/Users/admin/Documents/CODE/FRONT-END/CYBERSOFT/CLASSROOM/Meipaly/src/img/grid-metro-6.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/user/edit",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8888",
+			"type": "string"
+		}
+	]
+}
